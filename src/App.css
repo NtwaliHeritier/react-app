@@ -47,3 +47,24 @@ button {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+
+@media screen and (max-width: 992px) {
+  .photo-container {
+      width: 31%;
+      margin: 1% 1%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .photo-container {
+      width: 48%;
+      margin: 1% 1%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .photo-container {
+      width: 98%;
+      margin: 1% 1%;
+  }
+}
