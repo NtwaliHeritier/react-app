@@ -15,7 +15,7 @@ const SearchForm = ({fetchPhotos}) => {
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" onChange={handleChange} name="id" value={id}/>
+            <input type="text" onChange={handleChange} name="id" value={id} autoComplete="off"/>
             <button>Get Album Photos By Id</button>
         </form>
     )

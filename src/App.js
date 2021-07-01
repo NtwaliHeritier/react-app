@@ -9,10 +9,13 @@ function App() {
 
   const fetchPhotos = async(id) => {
     setId(id);
-    const data = await fetch(`https://jsonplaceholder.typicode.com/albums/${id}/photos`);
-    const result = await data.json();
-    console.log(result);
-    setPhotos(result);
+    try {
+      const data = await fetch(`https://jsonplaceholder.typicode.com/albums/${id}/photos`);
+      const result = await data.json();
+      setPhotos(result);
+    } catch(e) {
+      console.log(e)
+    }
   }
 
   return (
@@ -20,19 +23,19 @@ function App() {
       <SearchForm fetchPhotos={fetchPhotos}/>
       <div className="content">
        {photos.length > 0 && photos.map(photo => {
-         return <div key={photo.id}>
-           <h3>{photo.title}</h3>
-           <img src={photo.thumbnailUrl}/>
+         return <div className="photo-container" key={photo.id}>
+           <img src={photo.thumbnailUrl} alt="thumbnail"/>
+           <h4>{photo.title}</h4>
          </div>
        })
        }
+       </div>
        {
-         id && photos.length == 0 && <div className="no-content">No photos in this album</div>
+         id && photos.length === 0 && <div className="no-content">No photos in this album</div>
        }
        {
-         !id && photos.length == 0 && <div className="no-content">Enter id to get photos</div>
+         !id && photos.length === 0 && <div className="no-content">Enter id to get photos</div>
        }
-      </div>
     </React.Fragment>
 
   );
