@@ -9,6 +9,10 @@ const SearchForm = ({fetchPhotos}) => {
         fetchPhotos(id);
     }
 
+    const isValid = () => {
+        return id === "" ? false : true
+    }
+
     const handleChange = (e) => {
         setId(e.target.value);
     };
@@ -16,7 +20,7 @@ const SearchForm = ({fetchPhotos}) => {
     return(
         <form onSubmit={handleSubmit}>
             <input type="text" onChange={handleChange} name="id" value={id} autoComplete="off"/>
-            <button>Get Album Photos By Id</button>
+            <button disabled={!isValid()}>Get Album Photos By Id</button>
         </form>
     )
 }
