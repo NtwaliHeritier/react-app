@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-const SearchForm = () => {
+const SearchForm = ({fetchPhotos}) => {
 
     const [id, setId] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(id)
+        fetchPhotos(id);
     }
 
     const handleChange = (e) => {
