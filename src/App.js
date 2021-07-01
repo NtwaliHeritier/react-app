@@ -27,10 +27,10 @@ function App() {
        })
        }
        {
-         id && photos.length == 0 && <div>No photos in this album</div>
+         id && photos.length == 0 && <div className="no-content">No photos in this album</div>
        }
        {
-         !id && photos.length == 0 && <div>Enter id to get photos</div>
+         !id && photos.length == 0 && <div className="no-content">Enter id to get photos</div>
        }
       </div>
     </React.Fragment>
