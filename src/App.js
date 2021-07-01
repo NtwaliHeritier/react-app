@@ -34,7 +34,7 @@ function App() {
          id && photos.length === 0 && <div className="no-content">Loading...</div>
        }
        {
-         (!id || id === "") && photos.length === 0 && <div className="no-content">Enter id to get photos</div>
+         id === "" && photos.length === 0 && <div className="no-content">Enter id to get photos</div>
        }
     </React.Fragment>
 
